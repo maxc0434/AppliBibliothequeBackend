@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3000 // condition de connexion sur le port defini dans le .env || ou solution de repli 
 
 //Définition du middleware pour parser les requetes HTTP en JSON
-job.start();
+// job.start();
 app.use(express.json());
 app.use(cors());
 
