@@ -25,7 +25,7 @@ const protectRoute = async (req, res, next) => {
     //Vérification de l'existence de l'utilisateur
     // Si l'utilisateur est inexistant, renvoi d'une erreur 401 avec message d'erreur
     if (!user)
-      return res.status(401).json({ message: "Le Token n'est pas valide" });
+      return res.status(401).json({ message: "Le Token n'est pas " });
 
     // Ajout de l'utilisateur à la requête
     // Passage de l'utilisateur à la fonction suivante pour une utilisation ultérieure
@@ -39,7 +39,7 @@ const protectRoute = async (req, res, next) => {
     // Enregistrement de l'erreur dans la console
     console.error("Authentication error:", error.message);
     // Renvoi d'une erreur 401 avec message d'erreur
-    res.status(401).json({ message: "Le Token n'est pas valide" });
+    res.status(401).json({ message: "Le Token n'est pas lol" });
   }
 };
 
