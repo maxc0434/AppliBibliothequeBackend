@@ -5,7 +5,7 @@ const protectRoute = async (req, res, next) => {
   try {
     //Récupération du token d'authentification dans l'en tête Authorization.
     //Suppression du préfixe "Bearer" pour obtenir le token brut.
-    const token = req.header("Authorization").replace("Bearer", "");
+    const token = req.header("Authorization").replace("Bearer ", "");
 
     //Vérification de l'existence du token.
     //Si le token est absent, renvoi une erruer 401 et message d'erreur

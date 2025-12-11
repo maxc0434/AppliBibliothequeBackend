@@ -13,13 +13,13 @@ router.post("/", protectRoute, async (req, res) => {
          * Etape 1 : Recuperer les donnees envoyees par le client dans le corps de la requete
          * title = titre du livre, caption = description, rating = note, image = lien base64 de l'image
          */
-        const { title, caption, rating, image } = req.body;
+        const { title, caption, rating, image} = req.body;
 
         /**
          * Etape 2 : Verifier que tous les champs obligatoires sont remplis
          * Si un champ manque, on renvoie une erreur 400 (Bad Request)
          */
-        if (!title || !caption || !rating || !image) {
+        if (!image || !title || !caption || !rating) { 
             return res.status(400).json({ message: "Veuillez fournir tous les champs" });
         }
 
@@ -34,7 +34,7 @@ router.post("/", protectRoute, async (req, res) => {
          * Etape 4 : Creer l'objet livre avec toutes les donnees
          * On ajoute l'ID de l'utilisateur connecte (req.user._id) comme proprietaire
          */
-        const book =new Book ({
+        const newBook = new Book ({
             title,
             caption,
             rating,
