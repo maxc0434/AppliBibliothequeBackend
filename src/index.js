@@ -14,7 +14,8 @@ const PORT = process.env.PORT || 3000 // condition de connexion sur le port defi
 
 //Définition du middleware pour parser les requetes HTTP en JSON
 // job.start();
-app.use(express.json());
+app.use(express.json({limit: '10mb'}));
+app.use(express.urlencoded({ extend: true, limit: '10mb'}));
 app.use(cors());
 
 
