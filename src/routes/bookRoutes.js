@@ -83,7 +83,7 @@ router.get("/", protectRoute, async (req, res) => {
          * Si ces parametres ne sont pas fournis, on utilise des valeurs par defaut.
          */
         const page = req.query.page || 1;    // Numero de page actuel
-        const limit = req.query.limit || 5;  // Nombre de livres a afficher par page
+        const limit = req.query.limit || 2;  // Nombre de livres a afficher par page
         const skip = (page - 1) * limit;     // Nombre de livres a ignorer (pour sauter les pages precedentes)
 
         /**
